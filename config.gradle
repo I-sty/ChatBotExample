@@ -1,0 +1,28 @@
+def sdk_versions = [:]
+sdk_versions.min_sdk = 23
+sdk_versions.target_sdk = 29
+sdk_versions.compile_sdk = 29
+ext.sdk_versions = sdk_versions
+
+def dep_versions = [:]
+dep_versions.appcompat = "1.1.0"
+dep_versions.constraintlayout = "1.1.3"
+dep_versions.cardview = "1.0.0"
+dep_versions.recyclerview = "1.1.0"
+dep_versions.ktx = "1.3.0-alpha02"
+dep_versions.arch = "2.2.0"
+dep_versions.gradle = '3.6.1'
+dep_versions.kotlin = "1.3.71"
+dep_versions.koin = '2.0.1'
+dep_versions.timber = "4.7.1"
+dep_versions.lorem = "2.1"
+ext.dep_versions = dep_versions
+
+def static addRepos(RepositoryHandler handler) {
+    handler.google()
+    handler.jcenter()
+    handler.mavenCentral()
+    handler.maven { url 'https://jitpack.io' }
+}
+
+ext.addRepos = this.&addRepos
